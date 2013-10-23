@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe RockPaperScissors::App do
+describe Rsack::Server do
 
 	#let(:server) { Rack::MockRequest.new(RockPaperScissors::App.new) }
 	def server
-		Rack::MockRequest.new(RockPaperScissors::App.new)
+		Rack::MockRequest.new(Rsack::Server.new)
 	end
 
 	context '/' do
