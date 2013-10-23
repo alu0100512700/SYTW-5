@@ -1,2 +1,2 @@
 require 'rack'
-require 'rsack/rps'
+require 'rsack/server'
