@@ -6,7 +6,7 @@ class RpsTest < Test::Unit::TestCase
 #	include Rack::Test::Methods
 	
 	def setup
-		@nav = Rack::Test::Session.new(Rack::MockSession.new(RockPaperScissors::App.new))
+		@nav = Rack::Test::Session.new(Rack::MockSession.new(Rsack::Server.new(Rack::Session::Cookie.new(RockPaperScissors::App.new, :key => 'rack.session', :domain => 'prueba.com', :secret => 'some_secret'))))
 	end
 	
 	def app

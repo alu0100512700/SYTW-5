@@ -4,7 +4,7 @@ describe Rsack::Server do
 
 	#let(:server) { Rack::MockRequest.new(RockPaperScissors::App.new) }
 	def server
-		Rack::MockRequest.new(Rsack::Server.new)
+		Rack::MockRequest.new(Rsack::Server.new(Rack::Session::Cookie.new(RockPaperScissors::App.new, :key => 'rack.session', :domain => 'prueba.com', :secret => 'some_secret')))
 	end
 
 	context '/' do
@@ -23,7 +23,7 @@ describe Rsack::Server do
 		it "should tie" do
 			computer_throw = 'rock'
 			response = server.get("/?choice='rock'")
-			response.body.include?("Result: You tied with the computer")
+			response.body.include?("Result: You ted with the computer")
 		end
 
 		it "should win" do

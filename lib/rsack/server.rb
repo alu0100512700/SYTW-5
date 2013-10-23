@@ -1,9 +1,11 @@
 module Rsack
 	class Server
+		def initialize(app=nil)
+			@app = app
+		end
+		
 		def call(env)
-			response = Rack::Response.new
-			response.write("")
-			response.finish
+			@app.call(env) if @app
 		end
 	end
 end

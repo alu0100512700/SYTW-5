@@ -7,3 +7,4 @@ require 'rspec'
 require 'rack'
 
 require 'rsack'
+require 'rps.rb'
