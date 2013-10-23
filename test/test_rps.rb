@@ -3,9 +3,9 @@ require "rack/test"
 require "./lib/rps.rb"
 
 class RpsTest < Test::Unit::TestCase
-	include Rack::Test::Methods
+#	include Rack::Test::Methods
 	
-	def initnav
+	def setup
 		@nav = Rack::Test::Session.new(Rack::MockSession.new(RockPaperScissors::App.new))
 	end
 	
@@ -18,15 +18,15 @@ class RpsTest < Test::Unit::TestCase
 	end
 
 	#############Añadir test
+	
+	def computer
+		computer_throw = 'rock'
+	end
 
 	def test_index
 		@nav.get "/"
 		#pust last_response.inspect
 		assert @nav.last_response.ok?
-	end
-
-	def computer
-		computer_throw = 'rock'
 	end
 
 	def test_tie

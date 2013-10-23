@@ -99,8 +99,8 @@ module RockPaperScissors
 					:lose => self.getlose,
 					:tie => self.gettie,
 					:play => self.getplay,
-          #:throws => @throws
-          #:computer_throw => computer_throw,
+          :throws => @throws,
+          :computer_throw => computer_throw,
           #:player_throw => player_throw,
           #:aux => aux
         )
