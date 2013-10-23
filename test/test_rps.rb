@@ -6,7 +6,7 @@ class RpsTest < Test::Unit::TestCase
 #	include Rack::Test::Methods
 	
 	def setup
-		@nav = Rack::Test::Session.new(Rack::MockSession.new(Rsack::Server.new(Rack::Session::Cookie.new(RockPaperScissors::App.new, :key => 'rack.session', :domain => 'prueba.com', :secret => 'some_secret'))))
+		@nav = Rack::Test::Session.new(Rack::MockSession.new(Rack::Session::Cookie.new(RockPaperScissors::App.new, :key => 'rack.session', :domain => 'prueba.com', :secret => 'some_secret')))
 	end
 	
 	def app
@@ -36,6 +36,6 @@ class RpsTest < Test::Unit::TestCase
 
 	def test_h2
 		@nav.get "/"
-		assert_match "<h2> Choose a throw: </h2>", @nav.last_response.body
+		assert_match "<h2>Choose a throw:</h2>", @nav.last_response.body
 	end
 end
