@@ -6,6 +6,11 @@ task :defejec do
 end
 
 desc "Empezar test rspec"
-task :default do
+task :testrpec do
 	sh "rspec spec/rsack/rps_spec.rb"
+end
+
+desc "Empezar test"
+task :test do
+	sh "ruby test/test_rps.rb"
 end
