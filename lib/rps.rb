@@ -22,39 +22,39 @@ module RockPaperScissors
 				@session = env['rack.session']
 			end
 
-			def win
+			def getwin
 				return @session['won'].to_i if @session['won']
 				@session['won'] = 0
 			end
 
-			def win=(value)
+			def setwin=(value)
 				@session['won'] = value
 			end
 
-			def lose
+			def getlose
 				return @session['lost'].to_i if @session['lost']
 				@session['lost'] = 0
 			end
 
-			def lose=(value)
+			def setlose=(value)
 				@session['lost'] = value
 			end
 
-			def tie
+			def gettie
 				return @session['tied'].to_i if @session['tied']
 				@session['tied'] = 0
 			end
 
-			def tie=(value)
+			def settie=(value)
 				@session['tied'] = value
 			end
 
-			def play
+			def getplay
 				return @session['play'].to_i if @session['play']
 				@session['play'] = 0
 			end
 
-			def play=(value)
+			def setplay=(value)
 				@session['play'] = value
 			end
 
@@ -71,20 +71,20 @@ module RockPaperScissors
             ""
           elsif player_throw == computer_throw
 						
-						self.play=self.play+1
-						self.tie=self.tie+1
+						self.setplay=self.getplay+1
+						self.settie=self.gettie+1
             "Result: You tied with the computer"
 						
           elsif computer_throw == @defeat[player_throw]
             
-						self.play=self.play+1
-						self.win=self.win+1
+						self.setplay=self.getplay+1
+						self.setwin=self.getwin+1
 						"Result: Nicely done; #{player_throw} beats #{computer_throw}"
 						
           else
 						
-						self.play=self.play+1
-						self.lose=self.lose+1
+						self.setplay=self.getplay+1
+						self.setlose=self.getlose+1
             "Result: Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!"
 						
           end
@@ -95,10 +95,10 @@ module RockPaperScissors
         res.write engine.render({},
           :answer => answer,
           :choose => @choose,
-					:win => self.win,
-					:lose => self.lose,
-					:tie => self.tie,
-					:play => self.play,
+					:win => self.getwin,
+					:lose => self.getlose,
+					:tie => self.gettie,
+					:play => self.getplay,
           #:throws => @throws
           #:computer_throw => computer_throw,
           #:player_throw => player_throw,
