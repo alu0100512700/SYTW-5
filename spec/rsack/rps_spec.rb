@@ -13,4 +13,12 @@ describe Rsack::Server do
 			response.status.should == 200
 		end
 	end
+
+	context "/?choice='rock'" do
+		it "should return a 200 code" do
+			response = server.get("/?choice='scissors'")
+			response.status.should == 200
+		end
+
+	end
 end
