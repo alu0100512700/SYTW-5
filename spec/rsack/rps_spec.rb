@@ -35,7 +35,7 @@ describe Rsack::Server do
 		it "should lose" do
 			computer_throw = 'paper'
 			response = server.get("/?choice='rock'")
-			response.body.incluse?("Result: Ouch; paper beats rock. Better luck next time!")
+			response.body.include?("Result: Ouch; paper beats rock. Better luck next time!")
 		end
 	end
 
