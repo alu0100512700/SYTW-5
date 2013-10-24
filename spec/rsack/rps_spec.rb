@@ -56,6 +56,12 @@ describe Rsack::Server do
 			response = server.get("/?choice='paper'")
 			response.body.include?("Result: Nicely done; paper beats rock")
 		end
+
+		it "should lose" do
+			computer_throw = 'scissors'
+			response = server.get("/?choice='paper'")
+			response.body.include?("Result: Ouch; scissors beats paper. Better luck next time!")
+		end
 	end
 
 	context "/?choice='scissors'" do
