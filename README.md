@@ -3,8 +3,7 @@
 *Práctica 5: Añadir pruebas y sesiones a RockPaperScissors*
 ---------------------------------------------
 
-Recomendable leer la sección "Para usar" situado más abajo antes de iniciar
----------------------------------------------------------------------------
+####Recomendable leer la sección "Para usar" situado más abajo antes de iniciar
 
 ###Descripción:
 
