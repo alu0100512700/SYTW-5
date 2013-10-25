@@ -59,9 +59,14 @@ module RockPaperScissors
 			end
 
       def call(env)
-
+				
 				set_env(env)
         req = Rack::Request.new(env)
+			  
+				p "********************************************"
+        p "Los parametros pasados por get o post son..."
+				p req.params
+				p "********************************************"
   
         req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }
   
