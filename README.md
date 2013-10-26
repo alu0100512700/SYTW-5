@@ -23,7 +23,7 @@
 
 ###Para ejecutar pruebas rspec usar:
 
-		$rake testrspec
+		$rake spec
 
 ###Para usar:
 
